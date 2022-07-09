@@ -4,6 +4,7 @@ import { formatRating } from '@nx-example-2/store/util-formatters';
 import { Route, Routes, Link, useNavigate } from 'react-router-dom';
 import React, { useEffect, useState } from 'react';
 import { StoreFeatureGameDetail } from '@nx-example-2/store/feature-game-detail';
+import { Game } from '@nx-example-2/api/util-interfaces';
 
 const StyledApp = styled.div`
   // Your style here
@@ -12,7 +13,7 @@ const StyledApp = styled.div`
 export function App() {
   const navigate = useNavigate();
   const [state, setState] = useState<{
-    data: any[];
+    data: Game[];
     loadingState: 'success' | 'error' | 'loading';
   }>({
     data: [],

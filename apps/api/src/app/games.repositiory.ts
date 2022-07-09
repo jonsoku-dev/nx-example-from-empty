@@ -1,4 +1,6 @@
-const games = [
+import { Game } from '@nx-example-2/api/util-interfaces';
+
+const games: Array<Game> = [
   {
     id: 'settlers-in-the-can',
     name: 'Settlers in the Can',

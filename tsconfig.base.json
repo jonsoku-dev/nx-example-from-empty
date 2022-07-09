@@ -15,13 +15,17 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
+      "@nx-example-2/api/util-interfaces": [
+        "libs/api/util-interfaces/src/index.ts"
+      ],
       "@nx-example-2/store/feature-game-detail": [
         "libs/store/feature-game-detail/src/index.ts"
       ],
       "@nx-example-2/store/ui-shared": ["libs/store/ui-shared/src/index.ts"],
       "@nx-example-2/store/util-formatters": [
         "libs/store/util-formatters/src/index.ts"
-      ]
+      ],
+      "@nx-example-2/util-interfaces": ["libs/util-interfaces/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]
