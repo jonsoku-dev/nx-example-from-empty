@@ -10,15 +10,12 @@ const StyledApp = styled.div`
 export function App() {
   return (
     <StyledApp>
-      <NxWelcome title="store" />
+      {/* <NxWelcome title="store" /> */}
 
       {/* START: routes */}
       {/* These routes and navigation have been generated for you */}
-      {/* Feel free to move and update them to fit your needs */}
-      <br />
-      <hr />
-      <br />
       <div role="navigation">
+        <img src="/assets/logo.png" alt="logo" />
         <ul>
           <li>
             <Link to="/">Home</Link>
