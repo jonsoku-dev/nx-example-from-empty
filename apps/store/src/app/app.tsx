@@ -3,6 +3,8 @@ import { Header } from '@nx-example-2/store/ui-shared';
 import { formatRating } from '@nx-example-2/store/util-formatters';
 import { Route, Routes, Link } from 'react-router-dom';
 
+import { StoreFeatureGameDetail } from '@nx-example-2/store/feature-game-detail';
+
 const StyledApp = styled.div`
   // Your style here
 `;
@@ -24,6 +26,9 @@ export function App() {
               <Link to="/">Home</Link>
             </li>
             <li>
+              <Link to="/feature-game-detail">StoreFeatureGameDetail</Link>
+            </li>
+            <li>
               <Link to="/page-2">Page 2</Link>
             </li>
           </ul>
@@ -37,6 +42,10 @@ export function App() {
                 <Link to="/page-2">Click here for page 2.</Link>
               </div>
             }
+          />
+          <Route
+            path="/feature-game-detail"
+            element={<StoreFeatureGameDetail />}
           />
           <Route
             path="/page-2"
