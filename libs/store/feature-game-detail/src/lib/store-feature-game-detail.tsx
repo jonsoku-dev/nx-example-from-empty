@@ -47,7 +47,7 @@ export function StoreFeatureGameDetail(props: StoreFeatureGameDetailProps) {
 
   return (
     <StyledStoreFeatureGameDetail>
-      <h1>Welcome to StoreFeatureGameDetail!</h1>
+      <h1>Welcome to StoreFeatureGameDetail!@@@</h1>
     </StyledStoreFeatureGameDetail>
   );
 }
