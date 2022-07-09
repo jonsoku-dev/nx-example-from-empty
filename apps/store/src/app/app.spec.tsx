@@ -1,18 +1,33 @@
-import { render } from '@testing-library/react';
+import { findByTestId, render } from '@testing-library/react';
 
 import { BrowserRouter } from 'react-router-dom';
 
 import App from './app';
 
+function mockFetch(data: any) {
+  return jest.fn().mockImplementation(() => {
+    return Promise.resolve({
+      ok: true,
+      json: () => data,
+    });
+  });
+}
+
 describe('App', () => {
-  it('should render successfully', () => {
+  beforeEach(() => {
+    window.fetch = mockFetch([]);
+  });
+
+  it('should render successfully', async () => {
     const { baseElement } = render(
       <BrowserRouter>
         <App />
       </BrowserRouter>
     );
 
-    expect(baseElement).toBeTruthy();
+    const element = await findByTestId(baseElement, 'hohoho');
+
+    expect(element).toBeTruthy();
   });
 
   it('should have a greeting as the title', () => {
@@ -22,6 +37,6 @@ describe('App', () => {
       </BrowserRouter>
     );
 
-    expect(getByText(/Welcome store/gi)).toBeTruthy();
+    expect(getByText(/header title/gi)).toBeTruthy();
   });
 });
