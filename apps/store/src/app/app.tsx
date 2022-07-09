@@ -46,7 +46,7 @@ export function App() {
 
   return (
     <>
-      <Header />
+      <Header title="header title" />
       <p>{formatRating(2.505050505)}</p>
       <StyledApp>
         {/* <NxWelcome title="store" /> */}
