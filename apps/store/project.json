@@ -19,9 +19,9 @@
           "apps/store/src/favicon.ico",
           "apps/store/src/assets",
           {
-            "input": ".",
-            "glob": "*.png",
-            "output": ""
+            "input": "apps/store/src/assets",
+            "glob": "**/*",
+            "output": "assets/store"
           }
         ],
         "styles": [],
