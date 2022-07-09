@@ -1,8 +1,8 @@
 import styled from '@emotion/styled';
 import { Header } from '@nx-example-2/store/ui-shared';
 import { formatRating } from '@nx-example-2/store/util-formatters';
-import { Route, Routes, Link } from 'react-router-dom';
-
+import { Route, Routes, Link, useNavigate } from 'react-router-dom';
+import React, { useEffect, useState } from 'react';
 import { StoreFeatureGameDetail } from '@nx-example-2/store/feature-game-detail';
 
 const StyledApp = styled.div`
@@ -10,6 +10,39 @@ const StyledApp = styled.div`
 `;
 
 export function App() {
+  const navigate = useNavigate();
+  const [state, setState] = useState<{
+    data: any[];
+    loadingState: 'success' | 'error' | 'loading';
+  }>({
+    data: [],
+    loadingState: 'success',
+  });
+
+  useEffect(() => {
+    setState({
+      ...state,
+      loadingState: 'loading',
+    });
+    fetch('/api/games')
+      .then((x) => x.json())
+      .then((res) => {
+        setState({
+          ...state,
+          data: res,
+          loadingState: 'success',
+        });
+      })
+      .catch((err) => {
+        setState({
+          ...state,
+          loadingState: 'error',
+        });
+      });
+  }, []);
+
+  console.log({ state });
+
   return (
     <>
       <Header />
